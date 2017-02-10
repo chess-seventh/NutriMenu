@@ -1,0 +1,22 @@
+{
+  "name": "mysite",
+  "version": "1.0.0",
+  "devDependencies": {
+    "babel-core": "latest",
+    "babel-preset-es2015": "latest",
+    "gulp": "latest",
+    "gulp-autoprefixer": "latest",
+    "gulp-babel": "latest",
+    "gulp-cssbeautify": "latest",
+    "gulp-csscomb": "latest",
+    "gulp-csso": "latest",
+    "gulp-imagemin": "latest",
+    "gulp-load-plugins": "latest",
+    "gulp-rename": "latest",
+    "gulp-sass": "latest",
+    "gulp-sourcemaps": "latest"
+  },
+  "dependencies": {
+    "browser-sync": "latest"
+  }
+}

@@ -1,0 +1,17 @@
+.jumbotron {
+    position: relative;
+    background: #000 url("/static/img/banner.jpg") center center;
+    height: 400px;
+    background-size: cover;
+    overflow: hidden;
+    color: $white;
+}
+
+.overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+}

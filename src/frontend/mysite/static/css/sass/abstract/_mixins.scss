@@ -1,0 +1,14 @@
+/* ===========================
+   abstract/_mixins
+   =========================== */
+
+@mixin center-child($height, $width:100%) {
+  text-align: center;
+  height:$height;
+  width:$width;
+  line-height:$height;
+  > div {
+    line-height:normal;
+    display: inline-block;
+  }
+}

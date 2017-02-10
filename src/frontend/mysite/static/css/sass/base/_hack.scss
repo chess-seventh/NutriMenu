@@ -1,0 +1,20 @@
+/* ===========================
+   base/_hack
+   =========================== */
+
+/* hack footer to stay at bottom */
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: $footer_height;
+}
+
+footer {
+  height: $footer_height;
+  position: absolute;
+  bottom: 0;
+}

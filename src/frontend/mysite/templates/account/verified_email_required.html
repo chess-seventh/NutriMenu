@@ -1,0 +1,21 @@
+{% extends "account/base.html" %}
+{% block head_title %}Vérification de votre adresse email{% endblock %}
+{% block content %}
+<section id="verified_email_required">
+  <div class="row">
+    <div class="col-sm-offset-3 col-sm-6 col-md-offset-3 col-md-6">
+        <div class="box">
+            <h1>Vérifiez votre adresse email</h1>
+            {% url 'account_email' as email_url %}
+            <p>Cette partie du site nous demande de vérifier que vous
+                êtes qui vous prétendez être. Pour ce faire, nous vous devons
+                vérifier que vous êtes bien le propriétaire de l'adresse email renseignée.</p>
+            <p>Nous vous avons envoyé un email pour vérification.
+            Veuillez cliquer sur le lien reçu dans ce dernier.
+            Merci de nous contacter si vous ne recevez rien d'ici quelques minutes.</p>
+            <p><strong>Note:</strong> vous pouvez encore <a href="{{ email_url }}">changer votre adresse email</a>.</p>
+        </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

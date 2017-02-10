@@ -1,0 +1,6 @@
+*.pyc
+*.map
+*.idea
+myvenv/
+node_modules/
+db.sqlite3

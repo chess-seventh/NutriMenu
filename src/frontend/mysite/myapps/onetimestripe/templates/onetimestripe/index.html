@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+    <div class="row">
+        <div class="col-lg-12">
+
+            <form action="/items/charge/" method="post">
+                {% csrf_token %}
+                <article>
+                  <label>Amount: $5.00</label>
+                </article>
+
+                <!-- show info in stripe box-->
+                <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
+                        data-key="{{ key }}"
+                        data-amount="{{ price }}"
+                        data-name="{{ host }}"
+                        data-description="{{ description }}"></script>
+
+                <input type="hidden" name="object_id" value="2" />
+
+             </form>
+
+        </div>
+    </div>
+    <!-- /.row -->
+
+{% endblock %}

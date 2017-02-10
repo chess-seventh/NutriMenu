@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+{% load static %}
+{% load thumbnail %}
+
+{% block content %}
+    <!-- Page Heading -->
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="filter-wrapper">
+                <h5>Filtres:</h5>
+                <div class="dropdown filter-input">
+                  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    {% if current_categorie %}
+                      {{ current_categorie.title }}
+                    {% else %}
+                      Tous les objets
+                    {% endif %}
+                    <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                    <li><a href="/">Tous</a></li>
+                    {% for category in categories %}
+                        <li>
+                          <a href="/categorie/{{category.slug}}">
+                              {% if category.icon %}
+                                {{ category.icon.as_html }}
+                              {% endif %}
+                              {{category}}
+                          </a>
+                        </li>
+                    {% endfor %}
+                  </ul>
+                </div>
+            </div> <!-- /.filter -->
+
+        </div>
+    </div>
+    <!-- /.row -->
+    <!-- Page Heading -->
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Foods</h1>
+        </div>
+    </div>
+    <!-- /.row -->
+
+    <div class="row">
+        {% for food in foods %}
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 grid-item">
+                {% if food.photo %}
+                    <a href="/media/{{food.photo}}" data-lightbox="image-1" data-title="{{food.content}}">
+                        <img class="img-responsive" src="{% thumbnail food.photo 700x400 crop %}">
+                    </a>
+                {% else %}
+                    <div class="image-nologo-wrapper" style="position:relative;">
+                          {% if food.category.icon %}
+                            <span class="fa-cover" aria-hidden="true">
+                                {{ food.category.icon.as_html }}
+                            </span>
+                            <img class="img-responsive" style="" src="{% static 'img/nondisponibleblank.jpg' %}">
+                        {% else %}
+                            <img class="img-responsive" style="" src="{% static 'img/nondisponible.jpg' %}">
+                        {% endif %}
+                    </div>
+                {% endif %}
+                <h4>
+                    <a href="#">
+
+                      {{ food.title }}
+                    </a>
+                </h4>
+                <h6>
+
+                </h6>
+            </div>
+        {% empty %}
+            <p>Il n'y pas d'objet pour cette catégorie</p>
+        {% endfor %}
+     </div>
+
+    <div class="row text-center">
+        <div class="col-lg-12">
+            <ul class="pagination">
+                {% if foods.has_previous %}
+                    <li><a href="?page={{ foods.previous_page_number }}" aria-label="precedent">&laquo;</a></li>
+                {% endif %}
+
+                {% for pg in objects.paginator.page_range %}
+                    {% if objects.number == pg %}
+                        <li class="active"><a href="?page={{ pg }}">{{ pg }}</a></li>
+                    {% else %}
+                        <li><a href="?page={{ pg }}">{{ pg }}</a></li>
+                    {% endif %}
+                {% endfor %}
+
+                {% if objects.has_next %}
+                    <li><a href="?page={{ objects.next_page_number }}" aria-label="suivant">&raquo;</a></li>
+                {% endif %}
+
+            </ul>
+        </div>
+    </div>
+
+{% endblock %}

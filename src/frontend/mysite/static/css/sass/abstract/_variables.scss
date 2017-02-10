@@ -1,0 +1,56 @@
+/* ===========================
+   abstract/_variables
+   =========================== */
+
+/* Fonts */
+
+/* Fonts - Variables descriptives */
+
+// @import url(https://fonts.googleapis.com/css?family=Lato:400,700|Playfair+Display);
+// @import url(https://fonts.googleapis.com/css?family=Oswald:400,700);
+// @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
+// @import url(https://fonts.googleapis.com/css?family=Roboto:400,700);
+
+// OPEN FONTS
+// $lato: 'Lato', sans-serif;
+// $open_sans: 'Open Sans', sans-serif;
+// $roboto: 'Roboto', sans-serif;
+// $oswald: 'Oswald', sans-serif;
+
+// PREMIUM FONTS
+// $helvetica: "Helvetica Neue", Helvetica, Arial, sans-serif;
+// $proxima_nova: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+/* Fonts - Variables fonctionnelles */
+
+// $font_family_title: $helvetica;
+// $font_family_subtitle: $helvetica;
+// $font_family_text: $proxima_nova;
+
+/* Colors */
+
+/* Colors - Variables descriptives */
+$white: #fff;
+$black: #000;
+
+$grey: #6f6f6f;
+
+/* Variables social */
+
+$color_facebook: #3b5998;
+$color_twitter: #43bfe1;
+$color_google: #d34836;
+
+
+/* Breakpoint value */
+
+$xs: 360px; // Extra small devices | Portrait phones (<34em : 22.5em)
+$sm: 544px; // Small devices | Landscape phones (≥34em)
+$md: 768px; // Medium devices | Tablets (≥48em)
+$lg: 992px; // Large devices | Desktops (≥62em)
+$xl: 1200px; // Extra large devices | Desktops (≥75em)
+$xxl: 1920px; // Mega large Desktops | Desktops (≥120em)
+
+/* Others */
+
+$footer_height: 80px; // Used in _hack.scss to keep footer to bottom

@@ -1,0 +1,83 @@
+{
+  "recipe": {
+    "id": "d1ed2263-b1b2-4f50-9e9d-ba62cae81f29",
+    "co2-value": 765,
+    "info-text": "Two ingredient origins have been estimated.",
+    "eaternity-award": false,
+    "rating": "B",
+    "titles": [
+      {
+        "language": "de",
+        "value": "Kürbisrisotto"
+      },
+      {
+        "language": "en",
+        "value": "Pumpkin Risotto"
+      }
+    ],
+    "author": "Eckart Witzigmann",
+    "date": "2013-10-14",
+    "location": "Zürich Schweiz",
+    "servings": 140,
+    "instructions": [
+      {
+        "language": "de",
+        "value": "Den Karottenkuchen im Ofen backen und noch warm geniessen."
+      },
+      {
+        "language": "en",
+        "value": "Bake the carrot cake in the oven and enjoy as still hot."
+      }
+    ],
+    "ingredients": [
+      {
+        "id": "100100191",
+        "type": "conceptual-ingredients",
+        "names": [
+          {
+            "language": "de",
+            "value": "Tomaten"
+          },
+          {
+            "language": "en",
+            "value": "Tomatoes"
+          }
+        ],
+        "amount": 150,
+        "unit": "gram",
+        "origin": "spain",
+        "transport": "air",
+        "production": "greenhouse",
+        "processing": "raw",
+        "conservation": "fresh",
+        "packaging": "plastic",
+        "rating": "b",
+        "bar-chart": 31
+      },
+      {
+        "id": "100100894",
+        "type": "conceptual-ingredients",
+        "names": [
+          {
+            "language": "de",
+            "value": "Zwiebeln"
+          },
+          {
+            "language": "en",
+            "value": "Onions"
+          }
+        ],
+        "amount": 78,
+        "unit": "gram",
+        "origin": "france",
+        "transport": "ground",
+        "production": "organic",
+        "processing": "",
+        "conservation": "dried",
+        "packaging": "",
+        "rating": "c",
+        "bar-chart": 69
+      }
+    ]
+  }
+}

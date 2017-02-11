@@ -59,12 +59,12 @@ class Get_dish(object):
 		splited_ingredient = str.split(ingredient, __F2F_ONCES__)
 		if len(splited_ingredient) > 1:
 			return self.__get_quantity__(splited_ingredient[0], __F2F_ONCE_VALUE__), splited_ingredient[1]
-		return None
+		return ingredient
 	
 	def __get_quantity__(self, quantity, quantity_types):
 		if len(str.split(quantity, '/')) > 1:
 				quantity = int((str.split(quantity, '/')[0]) / int((str.split(quantity, '/')[1])
-		else
+		else:
 			quantity = int(quantity)
 		return quantity * quantity_types
 

@@ -35,5 +35,38 @@ class Get_dish(object):
 		return ingredients_tmp
 	
 	def __unit_converter__(self, ingredient):
-		splited_ingredient = str.split(ingredient)
-		return
+		splited_ingredient = str.split(ingredient, __F2F_TEA_SPOON__)
+		if len(splited_ingredient) > 1:
+			return self.__get_quantity__(splited_ingredient[0], __F2F_TEA_SPOON_VALUE__), splited_ingredient[1]
+		splited_ingredient = str.split(ingredient, __F2F_TABLE_SPOON__)
+		if len(splited_ingredient) > 1:
+			return self.__get_quantity__(splited_ingredient[0], __F2F_TABLE_SPOON_VALUE__), splited_ingredient[1]
+		splited_ingredient = str.split(ingredient, __F2F_CUP__)
+		if len(splited_ingredient) > 1:
+			return self.__get_quantity__(splited_ingredient[0], __F2F_CUP_VALUE__), splited_ingredient[1]
+		splited_ingredient = str.split(ingredient, __F2F_ONCE__)
+		if len(splited_ingredient) > 1:
+			return self.__get_quantity__(splited_ingredient[0], __F2F_ONCE_VALUE__), splited_ingredient[1]
+		splited_ingredient = str.split(ingredient, __F2F_TEA_SPOONS__)
+		if len(splited_ingredient) > 1:
+			return self.__get_quantity__(splited_ingredient[0], __F2F_TEA_SPOON_VALUE__), splited_ingredient[1]
+		splited_ingredient = str.split(ingredient, __F2F_TABLE_SPOONS__)
+		if len(splited_ingredient) > 1:
+			return self.__get_quantity__(splited_ingredient[0], __F2F_TABLE_SPOON_VALUE__), splited_ingredient[1]
+		splited_ingredient = str.split(ingredient, __F2F_CUPS__)
+		if len(splited_ingredient) > 1:
+			return self.__get_quantity__(splited_ingredient[0], __F2F_CUP_VALUE__), splited_ingredient[1]
+		splited_ingredient = str.split(ingredient, __F2F_ONCES__)
+		if len(splited_ingredient) > 1:
+			return self.__get_quantity__(splited_ingredient[0], __F2F_ONCE_VALUE__), splited_ingredient[1]
+		return None
+	
+	def __get_quantity__(self, quantity, quantity_types):
+		if len(str.split(quantity, '/') > 1:
+				quantity = int((str.split(quantity, '/')[0]) / int((str.split(quantity, '/')[1])
+		else
+			quantity = int(quantity)
+		return quantity * quantity_types
+
+
+

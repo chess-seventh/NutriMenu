@@ -16,4 +16,4 @@ class F2F_poller(object):
 
 	def get(self):
 		param = {F2F_KEY: F2F_AUTH_KEY, F2F_GET, self.id}
-		return request.get(F2F_URL_GET, param).json()
+		return requests.get(F2F_URL_GET, param).json()

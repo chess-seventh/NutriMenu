@@ -1,4 +1,5 @@
-import requests
+import requests, csv
+
 
 BASE_URL='https://www.openfood.ch/api/v2'
 API_KEY='7bae318b548c33fb739bf02ce2636072'
@@ -15,9 +16,10 @@ class openFood(object):
     def __init__(self):
         self.base = 'https://www.openfood.ch/api/v2'
         self.api_key = '7bae318b548c33fb739bf02ce2636072'
-        self.query = {"page[number]": "200","size[size]": "5000"}
+        #self.query = {"page[number]": "2","size[size]": "5"}
         self.headers = {'Authorization': "Token token={}".format(API_KEY),'Accept': 'application/vnd.api+json','Content-Type': 'application/vnd.api+json'}
         self.recipe = Recipe()
+        self.query
 
     def connection(self):
         pass
@@ -33,6 +35,20 @@ class openFood(object):
             return 1
 
         """
+            # this query gets all the info for a name that matches CHICKEN 
+            query = {
+              "query": {
+                "bool": {
+                  "must": [{
+                    "match": {
+                      "name_translations.en" : "chicken"
+                      }
+                   }]
+                  }
+                }
+              }
+
+
         url = BASE_URL + '/products'
         r = requests.get(url, params=query, headers=headers)
         print(r.status_code)
@@ -57,8 +73,6 @@ class Recipe(object):
             Ingredients()
             Ingredients.name = i
         
-
-
     def print_ingredients(self):
         print(self.name)
         for i in ingredients:
@@ -69,6 +83,9 @@ class Recipe(object):
             print(i)
     
 
+
+
+
 class Ingredients(object):
     """docstring for Ingredient"""
     def __init__(self):
@@ -76,7 +93,7 @@ class Ingredients(object):
         self.nutriments = []
 
     def matching(self):
-
+        pass
 
     def get_nutriment(self):
         
@@ -86,3 +103,8 @@ class Ingredients(object):
 
 
 
+def test():
+    with open('Raw_Food.csv') as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            print(row['ID'], row['name E'], row['category E'], row['unit'], row[''])

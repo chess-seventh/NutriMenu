@@ -63,7 +63,7 @@ class Get_dish(object):
 	
 	def __get_quantity__(self, quantity, quantity_types):
 		if len(str.split(quantity, '/')) > 1:
-				quantity = int((str.split(quantity, '/')[0]) / int((str.split(quantity, '/')[1])
+				quantity = int((str.split(quantity, '/'))[0]) / int((str.split(quantity, '/'))[1])
 		else:
 			quantity = int(quantity)
 		return quantity * quantity_types
